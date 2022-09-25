@@ -1,0 +1,12 @@
+<?php
+$conn = mysqli_connect("localhost", "root", "", "register_db");
+$result = mysqli_query($conn,"SELECT * FROM department where designation_id = $designation_id");
+?>
+<option value="">Select Department</option>
+<?php
+while($row = mysqli_fetch_array($result)) {
+?>
+<option value="<?php echo $row["id"];?>"><?php echo $row["name"];?></option>
+<?php
+}
+?>

@@ -1,4 +1,5 @@
 <?php
+
 $fname = $_POST["fname"];
 $lname = $_POST["lname"];
 $oname = $_POST["oname"];
@@ -11,6 +12,7 @@ $email = $_POST["email"];
 $address = $_POST["address"];
 $state = $_POST["state"];
 $lg = $_POST["lg"];
+  
 
 
 $host = "localhost";
@@ -28,7 +30,7 @@ $conn = mysqli_connect(hostname: $host,
     } 
 
     $sql = "INSERT INTO register (fname, lname, oname, gender, designation, department, dependent, phone, email, address, state, lg)
-        VALUES (????????????)";
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = mysqli_stmt_init($conn);
 
